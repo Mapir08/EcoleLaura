@@ -1,0 +1,19 @@
+{
+  "name": "ecole_laura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mapir08/EcoleLaura.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mapir08/EcoleLaura/issues"
+  },
+  "homepage": "https://github.com/Mapir08/EcoleLaura#readme"
+}

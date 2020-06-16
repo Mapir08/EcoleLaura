@@ -1,0 +1,23 @@
+
+#decor{
+	align-self: flex-end;
+	height: 225px;
+	width: 206px;
+	margin-left:-206px; /* pour la décaller dessous le postit */
+	z-index: 1;
+	background-image: url("../images/pot_crayon.png");
+	background-repeat: no-repeat;
+}
+footer{
+	width:786px;
+	height: 181px;
+	background-image: url("../images/pupitre.png");
+	background-repeat: no-repeat;
+	margin-top:-60px;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+footer p{
+	margin-bottom: 15px;
+	margin-right: 80px;
+}
