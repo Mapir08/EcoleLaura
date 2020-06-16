@@ -1,0 +1,148 @@
+@font-face{
+	font-family: kindergarten;
+	src: url('polices/kindergarten.ttf');
+}
+@font-face{
+	font-family: DK Crayon Crumble;
+	src: url('polices/DK Crayon Crumble.ttf');
+}
+body, #menu, section, header,#menu a, footer{
+	display: flex;
+}
+h1, ul, p, body{
+	margin:0px; /* pour les blocks avec marge prédéfini*/
+}
+body{
+	flex-direction: column;
+	align-items: center;
+	background-image:url("images/Parquet_bois_3.1.jpg");
+	font-family: kindergarten, "Comic Sans MS", Arial, sans-serif;
+}
+header{
+	flex-direction: column;
+	width:700px;
+}
+#titre_principale{
+	height:100px;
+	background-image:url("images/Bordure_cahier.png");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	text-align: center;
+	font-size: 24px;
+}
+#menu {
+	height: 60px;
+	list-style-type: none;
+}
+#menu a:hover{
+	height: 55px;
+	box-shadow: 2px 4px 2px black;
+}
+#menu a{
+	height: 45px;
+	width: 120px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0px 0px 15px 15px;
+	margin-right: 1px;
+	text-align: center;
+}
+#onglet1{
+	background-color: #98D8F8;
+	margin-top:-10px;
+}
+#onglet2{
+	background-color: #C8F898;
+	margin-top:-8px;
+}
+#onglet3{
+	background-color: #FBC8F6;
+	margin-top:-6px;
+}
+#onglet4{
+	background-color: #FBF6C8;
+	margin-top:-4px;
+}
+#onglet5{
+	background-color: #FFA763;
+	margin-top:-2px;
+}
+article{
+	border:5px ridge #EEC960;
+	background-image: url("images/Tableau_Craie_4.jpg");
+	background-repeat: no-repeat;
+	z-index: 1;
+	height: 400px; /* Dimension de l'image */
+	width: 484px; /* Dimension de l'image */
+	font-family: DK Crayon Crumble, "Comic Sans MS", Arial, sans-serif;
+	color: white;
+}
+#tableau{ /* Créer un tableau pour lt'affichage*/
+	font-size: 120px;
+	text-align: right;
+	margin-right: 120px;
+	margin-top: 40px;
+}
+#postit
+{
+	background-image: url("images/post-it_1.png");
+	background-repeat: no-repeat;
+	height: 175px;
+	width: 206px;
+}
+#postit p{
+	text-align: center;
+	margin: 60px 40px 40px 25px;
+}
+#decor{
+	align-self: flex-end;
+	height: 225px;
+	width: 206px;
+	margin-left:-206px; /* pour la décaller dessous le postit */
+	z-index: 1;
+	background-image: url("images/pot_crayon.png");
+	background-repeat: no-repeat;
+}
+a{ /* Couleur des liens */
+	text-decoration: none;
+	color:black;
+}
+footer{
+	width:786px;
+	height: 181px;
+	background-image: url("images/pupitre.png");
+	background-repeat: no-repeat;
+	margin-top:-60px;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+footer p{
+	margin-bottom: 15px;
+	margin-right: 80px;
+}
+@media all and (max-width:700px){
+	header{
+		width:500px;
+	}
+	#menu a{
+		width: 85px;
+	}
+	#postit, #decor{
+		display:none;
+	}
+	#titre_principale{
+		background-image: url("images/Bordure_cahier_500.png");
+		font-size: 18px;
+	}
+	#menu a{
+		font-size: 12px;
+	}
+	footer{
+		width:586px;
+		height: 135px;
+		background-image: url("images/pupitre_500.png");
+	}
+	footer p{
+		margin-bottom: 10px;
+	}
+}
