@@ -3,41 +3,35 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="public/css/style.css" />
         <title>Devoir pour Laura</title>
     </head>
 
     <body>
-    	<header>
-    		<div id="titre_principale">
-    			<h1>Prête à faire tes devoirs ?</h1>
-    		</div>
-    		<nav>
-    			<ul id="menu">
-    				<li><a id="onglet1" href="#">Calculs Posé</a>
-    				<li><a id="onglet2" href="#">Tables de multiplication</a>
-    				<li><a id="onglet3" href="#">Multiplications posé</a>
-                    <li><a id="onglet4" href="#">Problèmes</a>
-                    <li><a id="onglet5" href="#">Autres...</a>
-    			</ul>
-    		</nav>
-    	</header>
-
-    	<section>
-            <article>
-                <p id="tableau">356<br/>-  158<br/></p>
-            </article>
-
-            <aside id="postit">
-                <p>Coucou ma chérie d'amour !<br/>Travail bien.<br/>Bisous</p>
-            </aside>
-
-            <aside id="decor">
-            </aside>
-    	</section>
-
-    	<footer>
-    		<p>Created by MAPIR</p>
-    	</footer>
+    	<div id="entete">
+    		<div id="titre"><h1>Prête à faire tes devoirs ?</h1></div>
+    		<ul class="menu">
+    			<li><div class="menu--btn menu__1">Calculs Posé</div>
+    			<li><div class="menu--btn menu__2">Tables de multiplication</div>
+				<li><div class="menu--btn menu__3">Multiplications posé</div>
+                <li><div class="menu--btn menu__4">Problèmes</div>
+                <li><div class="menu--btn menu__5">Autres...</div>
+			</ul>
+    	</div>
+    	<div id="corps">
+            <div id="tableau">
+                <p id="tableau__exo">En avant pour les Calculs !<br/>Bon courage.</p>
+            </div>
+            <div id="postit"><p>Coucou ma chérie d'amour !<br/>Travail bien,<br/>Bisous !</p></div>
+            <div id="decor"></div>
+    	</div>
+        <div id="pupitre">
+            <div id="pupitre__btnRetour">Retour</div>
+            <div id="pupitre__btnSuivant" class='choixMenu0'>Suivant</div>
+            <div id="pupitre__compteur"></div>
+            <p>Created by MAPIR</p>
+        </div>
+        <script src="public/JS/main.js" type="text/javascript"></script>
     </body>
 </html>

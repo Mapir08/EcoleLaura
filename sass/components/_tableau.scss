@@ -1,0 +1,90 @@
+#tableau{
+	border:5px ridge #EEC960;
+	background: url("../images/Tableau_Craie.jpg") no-repeat;
+	z-index: 1;
+	height: 400px; /* Dimension de l'image */
+	width: 640px;
+	font-family: DK Crayon Crumble, "Comic Sans MS", Arial, sans-serif;
+	color: white;
+    &__exo{
+		font-size: 4rem;
+		width: 100%;
+        text-align: center;
+        margin-top: 100px;
+	}
+	&__pose{
+		text-align: right;
+		margin-right:60px;
+		margin-top:50px;
+		margin-left:50px;
+		& .chiffre, .result{
+			width:50px;
+			height:80px;
+			margin-left:30px;
+		}
+		& .chiffre{
+			font-size: 6.2rem;
+			margin-right:13px;
+		}
+		& .result{
+			text-align: center;
+			font-size: 70px;
+			border-radius: 10px 10px 10px 10px;
+			background:none;
+			font-family: kindergarten, "Comic Sans MS", Arial, sans-serif;
+			color:#81e6ff;
+		}
+		& #ligneResultat{
+			border-top : 2px solid white;
+			padding-top: 10px;
+		}
+	}
+}
+.report{
+	position: relative;
+	background: none;
+	color: white;
+	border-radius: 5px 5px 5px 5px;
+	&__AM{
+		top: -323px;
+		left: 40px;
+	}
+	&__AC{
+		top: -344px;
+		left: 140px;
+	}
+	&__AD{
+		top: -365px;
+		left: 240px;
+	}
+	&__SD{
+		top: -250px;
+		left: 190px;
+	}
+	&__SU{
+		top: -271px;
+		left: 280px;
+	}
+	&__sC{
+		top: -195px;
+		left: 100px;
+	}
+	&__sD{
+		top: -216px;
+		left: 190px;
+	}
+}
+
+#test{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    background-color: blue;
+    cursor: pointer;
+    &__resultat{
+        background-color: red;
+        text-align: center;
+        font-size: 4rem;
+        margin-top:100px;
+    }
+}

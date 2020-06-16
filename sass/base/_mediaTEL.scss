@@ -1,0 +1,30 @@
+// spécifique a l'iphone (UTILE ?)
+@media screen and (max-width: 375px) {
+    #pupitre {
+        width: 100%;
+        background-position: center;
+    }
+    #titre {
+        width: 100%;
+        font-size: 1rem;
+    }
+    #postit, #decor {
+        width: 0;
+        height: 0;
+    }
+    #postit p {
+        display:none;
+    }
+    #decor { 
+        margin-left: 0;
+    }
+    #tableau {
+        border: none;
+        margin-top: 5px;
+        width:100%;
+    }
+    // Temporaire
+    .menu {
+        display: none;
+    }
+}

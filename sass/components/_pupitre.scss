@@ -1,0 +1,40 @@
+#pupitre{
+	@include flex (row, flex-end, flex-end);
+	width: 786px;
+	height: 181px;
+	background-image: url("../images/pupitre.png");
+	background-repeat: no-repeat;
+	margin-top:-60px;
+    & p{
+        margin-bottom: 15px;
+        margin-right: 80px;
+	}
+	&__compteur {
+		display: none;
+		position: relative;
+		z-index: 1;
+		font-size: 2.4rem;
+		width: 40px;
+		text-align: center;
+		top: -130px;
+		left: 145px;
+	}
+	&__btnRetour, &__btnSuivant{
+		display: none;
+		width:150px;
+		height:40px;
+		background-color: white;
+		position: relative;
+		border-radius: 15px 15px 15px 15px;
+		text-align: center;
+        cursor: pointer;
+		top:-42px;
+		font-size: 1.8rem;
+	}
+	&__btnRetour{
+		left:-80px;
+	}
+	&__btnSuivant{
+		left:100px;
+	}
+}

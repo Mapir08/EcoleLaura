@@ -1,0 +1,18 @@
+*{
+    margin:0px;
+}
+body{
+	@include flex (column, flex-start, center);
+	background-image:url("../images/fond_parquet.jpg");
+	font-family: kindergarten, "Comic Sans MS", Arial, sans-serif;
+}
+#corps{
+    display: flex;
+}
+#titre{
+	width: 700px;
+	height: 100px;
+	background:url("../images/Bordure_cahier.png") no-repeat bottom;
+	text-align: center;
+	font-size: 1.5rem;
+}

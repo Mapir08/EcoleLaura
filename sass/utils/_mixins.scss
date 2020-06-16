@@ -1,0 +1,10 @@
+@mixin btnColorPos ($color, $pos) {
+    background-color: $color;
+    margin-top: $pos;
+}
+@mixin flex ($dir, $principale, $secondaire ) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $principale;
+	align-items: $secondaire;
+}

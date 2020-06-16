@@ -1,0 +1,34 @@
+.menu {
+    display: flex;
+	height: 60px;
+    list-style-type: none;
+    &--btn{
+        @include flex (row, center, center);
+        height: 45px;
+        width: 120px;
+        border-radius: 0px 0px 15px 15px;
+        margin-right: 1px;
+        text-align: center;
+        transition: height 100ms;
+        cursor: pointer;
+        &:hover{
+            height: 55px;
+            box-shadow: 2px 4px 2px black;
+        }
+    }
+    &__1{
+        @include btnColorPos(#98D8F8,-10px)
+    }
+    &__2{
+        @include btnColorPos(#C8F898,-8px);
+    }
+    &__3{
+        @include btnColorPos(#FBC8F6,-6px);
+    }
+    &__4{
+        @include btnColorPos(#FBF6C8,-4px);
+    }
+    &__5{
+        @include btnColorPos(#FFA763,-2px);
+    }
+}
