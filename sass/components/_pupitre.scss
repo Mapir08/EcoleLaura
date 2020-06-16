@@ -1,11 +1,10 @@
 .pupitre{
+	@include flex (row, flex-end, flex-end);
 	width:786px;
 	height: 181px;
 	background-image: url("../images/pupitre.png");
 	background-repeat: no-repeat;
 	margin-top:-60px;
-	justify-content: flex-end;
-	align-items: flex-end;
     & p{
         margin-bottom: 15px;
         margin-right: 80px;
