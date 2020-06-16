@@ -1,11 +1,11 @@
-#postit
+.postit
 {
-	background-image: url("../images/post-it_1.png");
+	background-image: url("../images/post-it.png");
 	background-repeat: no-repeat;
 	height: 175px;
 	width: 206px;
-}
-#postit p{
-	text-align: center;
-	margin: 60px 40px 40px 25px;
+    & p{
+	    text-align: center;
+        margin: 60px 40px 40px 25px;
+    }
 }

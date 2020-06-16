@@ -1,0 +1,8 @@
+.decor{
+	align-self: flex-end;
+	height: 225px;
+	width: 206px;
+	margin-left:-206px; /* pour la décaller dessous le postit */
+	z-index: 1;
+	background: url("../images/pot_crayon.png") no-repeat;
+}

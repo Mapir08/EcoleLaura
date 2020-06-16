@@ -1,16 +1,20 @@
+*{
+    margin:0px;
+}
 a{ /* Couleur des liens */
 	text-decoration: none;
 	color:black;
 }
-body, #menu, section, header,#menu a, footer{
-	display: flex;
-}
-h1, ul, p, body{
-	margin:0px; /* pour les blocks avec marge prédéfini*/
+header{
+	flex-direction: column;
+	width:700px;
 }
 body{
 	flex-direction: column;
 	align-items: center;
-	background-image:url("../images/Parquet_bois_3.1.jpg");
+	background-image:url("../images/fond_parquet.jpg");
 	font-family: kindergarten, "Comic Sans MS", Arial, sans-serif;
+}
+body, #menu, section, header,#menu a, footer{
+	@include flex;
 }
