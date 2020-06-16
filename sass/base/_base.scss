@@ -5,16 +5,21 @@ a{ /* Couleur des liens */
 	text-decoration: none;
 	color:black;
 }
-header{
-	flex-direction: column;
-	width:700px;
-}
 body{
 	flex-direction: column;
 	align-items: center;
 	background-image:url("../images/fond_parquet.jpg");
 	font-family: kindergarten, "Comic Sans MS", Arial, sans-serif;
 }
-body, #menu, section, header,#menu a, footer{
-	@include flex;
+body, #corps, .menu, .menu a, .pupitre{
+    display: flex;
+}
+#entete{
+	width:700px;
+}
+#titre{
+	height:100px;
+	background:url("../images/Bordure_cahier.png") no-repeat bottom;
+	text-align: center;
+	font-size: 24px;
 }
