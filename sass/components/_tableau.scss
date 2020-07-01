@@ -1,9 +1,9 @@
-.tableau{
+#tableau{
 	border:5px ridge #EEC960;
 	background: url("../images/Tableau_Craie.jpg") no-repeat;
 	z-index: 1;
 	height: 400px; /* Dimension de l'image */
-	width: 484px; /* Dimension de l'image */
+	width: 484px; /* Dimension de l'image 484px l'original*/
 	font-family: DK Crayon Crumble, "Comic Sans MS", Arial, sans-serif;
 	color: white;
     &__exo{ /* Créer un tableau pour l'affichage*/

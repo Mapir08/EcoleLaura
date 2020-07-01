@@ -11,20 +11,26 @@
     	<div id="entete">
     		<div id="titre"><h1>Prête à faire tes devoirs ?</h1></div>
     		<ul class="menu">
-    			<li><a class="menu__1" href="#">Calculs Posé</a>
-    			<li><a class="menu__2" href="#">Tables de multiplication</a>
-				<li><a class="menu__3" href="#">Multiplications posé</a>
-                <li><a class="menu__4" href="#">Problèmes</a>
-                <li><a class="menu__5" href="#">Autres...</a>
+    			<li><div class="menu--btn menu__1">Calculs Posé</div>
+    			<li><div class="menu--btn menu__2">Tables de multiplication</div>
+				<li><div class="menu--btn menu__3">Multiplications posé</div>
+                <li><div class="menu--btn menu__4">Problèmes</div>
+                <li><div class="menu--btn menu__5">Autres...</div>
 			</ul>
     	</div>
 
     	<div id="corps">
-            <div class="tableau"><p class="tableau__exo">356<br/>-  158<br/></p></div>
-            <div class="postit"><p>Coucou ma chérie d'amour !<br/>Travail bien,<br/>Bisous !</p></div>
-            <div class="decor"></div>
+            <div id="tableau">
+                <p id="tableau__exo">
+                    356<br/>-  158<br/>
+                </p>
+            </div>
+
+            <div id="postit" enabled="false"><p>Coucou ma chérie d'amour !<br/>Travail bien,<br/>Bisous !</p></div>
+            <div id="decor" disabled="true"></div>
     	</div>
 
-    	<div class="pupitre"><p>Created by MAPIR</p></div>
+        <div id="pupitre"><p>Created by MAPIR</p></div>
+        <script src="public/JS/main.js" type="text/javascript"></script>
     </body>
 </html>

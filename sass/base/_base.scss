@@ -1,10 +1,6 @@
 *{
     margin:0px;
 }
-a{ /* Couleur des liens */
-	text-decoration: none;
-	color:black;
-}
 body{
 	@include flex (column, flex-start, center);
 	background-image:url("../images/fond_parquet.jpg");
