@@ -21,12 +21,20 @@ const calculPose = "\
         <label class='chiffre' id='u2'></label>\
     </div>\
     <div id='ligneResultat'>\
-        <input class='result' id='mR'></input>\
-        <input class='result' id='cR'></input>\
-        <input class='result' id='dR'></input>\
-        <input class='result' id='uR'></input>\
+        <input class='result' id='mR' maxlenght='1'></input>\
+        <input class='result' id='cR' maxlenght='1'></input>\
+        <input class='result' id='dR' maxlenght='1'></input>\
+        <input class='result' id='uR' maxlenght='1'></input>\
     </div>\
+    <input class='report report__AM' type='number' min=0 max=9></input>\
+    <input class='report report__AC' type='number' min=0 max=9></input>\
+    <input class='report report__AD' type='number' min=0 max=9></input>\
+    <input class='report report__SD' type='number' min=0 max=9></input>\
+    <input class='report report__SU' type='number' min=0 max=9></input>\
+    <input class='report report__sC' type='number' min=0 max=9></input>\
+    <input class='report report__sD' type='number' min=0 max=9></input>\
 </form>"; // Ajouter les reports tous au même endroit et les placer en CSS
+const underConstr = "<p id='tableau__exo'>Under Construction !</p>";
 
 // Cache affiche les décors à droite :
 function decorVisible(value) {
@@ -68,13 +76,18 @@ function calculResultat(v1, v2, s) {
         return 0;
     }
 }
-// Valeurs entrés : FONCTIONNE PAS ???????
 function resultatEntre() {
     let m = document.getElementById('mR').value;
     let c = document.getElementById('cR').value;
     let d = document.getElementById('dR').value;
     let u = document.getElementById('uR').value;
-    return (m * 1000) + (c * 100) + (d * 10) + u;
+    return (m * 1000) + (c * 100) + (d * 10) + parseInt(u);
+}
+function clearEntre() {
+    document.getElementById('mR').value = "";
+    document.getElementById('cR').value = "";
+    document.getElementById('dR').value = "";
+    document.getElementById('uR').value = "";
 }
 // Affichage des chiffres divisé ET calcul du résultat :
 function randomTous(quoi) {
@@ -89,13 +102,15 @@ function randomTous(quoi) {
     }
         afficherChiffre(chiffre1, chiffre2, signe);
         document.querySelector("#signe").textContent = signe;
-}// PROBLEME avec le calcul lors des MOINS
+}
 function afficherChiffre(v1, v2, s) {
     let checked ;
     if (s == '-') {
         checked = checkOrdreMoins(v1,v2);
+        reportVisible(true);
     } else {
         checked = {v1: v1, v2: v2};
+        reportVisible(false);
     }
     let chiffre1Divise = diviserChiffre(checked.v1);
     let chiffre2Divise = diviserChiffre(checked.v2);
@@ -105,7 +120,7 @@ function afficherChiffre(v1, v2, s) {
     document.querySelector("#c2").textContent = Math.trunc(chiffre2Divise.c);
     document.querySelector("#d2").textContent = Math.trunc(chiffre2Divise.d);
     document.querySelector("#u2").textContent = Math.trunc(chiffre2Divise.u);
-    resultatReel = calculResultat(v1, v2, s);
+    resultatReel = calculResultat(checked.v1, checked.v2, s);
     if (c1.textContent == 0) {
         c1.textContent = "";
         if (d1.textContent == 0) {
@@ -125,11 +140,11 @@ function diviserChiffre(value) {
     let u = value % 10;
     return { c: c, d: d, u: u };
 }
-function checkOrdreMoins(v1, v2) {
-    if (v1 < v2) {
-        return {v1: v2, v2: v1}
+function checkOrdreMoins(val1, val2) {
+    if (val1 < val2) {
+        return {v1: val2, v2: val1};
     } else {
-        return {v1: v1, v2: v2}
+        return {v1: val1, v2: val2};
     }
 }
 // Afficher bouton Suivant / Précedent
@@ -147,6 +162,33 @@ function btnRetourVisible(ouinon) {
         btnRetour.style.display = "none";
     }
 }
+function reportVisible(moins) {
+    document.querySelector('.report__AM').value = "" ;
+    document.querySelector('.report__AC').value = "" ;
+    document.querySelector('.report__AD').value = "" ;
+    document.querySelector('.report__SD').value = "" ;
+    document.querySelector('.report__SU').value = "" ;
+    document.querySelector('.report__sC').value = "" ;
+    document.querySelector('.report__sD').value = "" ;
+    document.querySelector('.report__AM').style.display = 'none';
+    document.querySelector('.report__AC').style.display = 'none';
+    document.querySelector('.report__AD').style.display = 'none';
+    document.querySelector('.report__SD').style.display = 'none';
+    document.querySelector('.report__SU').style.display = 'none';
+    document.querySelector('.report__sC').style.display = 'none';
+    document.querySelector('.report__sD').style.display = 'none';
+    if (moins) {
+        document.querySelector('.report__SD').style.display = 'block';
+        document.querySelector('.report__SU').style.display = 'block';
+        document.querySelector('.report__sC').style.display = 'block';
+        document.querySelector('.report__sD').style.display = 'block';
+    } else {
+        document.querySelector('.report__AM').style.display = 'block';
+        document.querySelector('.report__AC').style.display = 'block';
+        document.querySelector('.report__AD').style.display = 'block';
+    }
+
+}
 function compteurInit(ouinon) {
     if (ouinon) {
         compteur.textContent = 1;
@@ -160,15 +202,14 @@ function compteurInit(ouinon) {
 document.querySelector(".menu__1").addEventListener('click', function () {
     if (choixMenu != 'choixMenu1') {
         choixMenu = 'choixMenu1';
-        decorVisible(true);
-        tableau.innerHTML = calculPose;
+        decorVisible(true); 
+        tableau.innerHTML = calculPose; // contenu de la page
         btnSuivantVisible(true);
-        btnRetourVisible(true);
+        btnRetourVisible(false);
         btnSuivant.classList.remove(btnSuivant.classList);
         btnSuivant.classList.add(choixMenu);
         randomTous('plusmoins');
         compteurInit(true);
-        btnSuivant.textContent = resultatReel;
     }
 });
 // Tables de multiplications :
@@ -176,7 +217,7 @@ document.querySelector(".menu__2").addEventListener('click', function () {
     if (choixMenu != 'choixMenu2') {
         choixMenu = 'choixMenu2';
         decorVisible(true);
-        tableau.innerHTML = "Tableau 2";
+        tableau.innerHTML = underConstr; // contenu de la page
         btnSuivantVisible(true);
         btnSuivant.classList.remove(btnSuivant.classList);
         btnSuivant.classList.add(choixMenu);
@@ -187,8 +228,9 @@ document.querySelector(".menu__3").addEventListener('click', function () {
     if (choixMenu != 'choixMenu3') {
         choixMenu = 'choixMenu3';
         decorVisible(true);
-        tableau.innerHTML = calculPose;
+        tableau.innerHTML = calculPose; // contenu de la page
         btnSuivantVisible(true);
+        btnRetourVisible(false);
         btnSuivant.classList.remove(btnSuivant.classList);
         btnSuivant.classList.add(choixMenu);
         randomTous('fois');
@@ -200,7 +242,7 @@ document.querySelector(".menu__4").addEventListener('click', function () {
     if (choixMenu != 'choixMenu4') {
         choixMenu = 'choixMenu4';
         decorVisible(false);
-        tableau.innerHTML = "Tableau 4";
+        tableau.innerHTML = underConstr; // contenu de la page
         btnSuivantVisible(true);
         btnSuivant.classList.remove(btnSuivant.classList);
         btnSuivant.classList.add(choixMenu);
@@ -211,7 +253,7 @@ document.querySelector(".menu__5").addEventListener('click', function () {
     if (choixMenu != 'choixMenu5') {
         choixMenu = 'choixMenu5';
         decorVisible(false);
-        tableau.innerHTML = "Tableau 5";
+        tableau.innerHTML = underConstr; // contenu de la page
         btnSuivantVisible(true);
         btnSuivant.classList.remove(btnSuivant.classList);
         btnSuivant.classList.add(choixMenu);
@@ -220,12 +262,15 @@ document.querySelector(".menu__5").addEventListener('click', function () {
 
 btnSuivant.addEventListener('click', function () {
     if (compteur.textContent < 20) {
-        if (choixMenu == 'choixMenu1' || choixMenu == 'choixMenu3') {
-            if (resultatReel == resultatEntre()) {
-                compteur.textContent ++
+        if (resultatReel == resultatEntre()) {
+            if (choixMenu == 'choixMenu1') {
                 randomTous('plusmoins');
+            } if (choixMenu == 'choixMenu3') {
+                randomTous('fois');
             }
-        } 
+            compteur.textContent ++
+            clearEntre();
+        }
     } else {
         tableau.innerHTML = "Bravo tu as fini !";
         decorVisible(false);
