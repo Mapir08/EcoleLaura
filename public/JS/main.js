@@ -1,7 +1,7 @@
-const btnSuivant = document.getElementById('pupitre__btnSuivant');
-const btnRetour = document.getElementById('pupitre__btnRetour');
-const tableau = document.getElementById('tableau');
-let compteur = document.getElementById('pupitre__compteur');
+const btnSuivant = document.getElementById("pupitre__btnSuivant");
+const btnRetour = document.getElementById("pupitre__btnRetour");
+const tableau = document.getElementById("tableau");
+let compteur = document.getElementById("pupitre__compteur");
 let choixMenu = 0;
 let chiffre1;
 let chiffre2;
@@ -248,16 +248,30 @@ document.querySelector(".menu__4").addEventListener('click', function () {
         btnSuivant.classList.add(choixMenu);
     }
 });
-// Autres :
+// Autres : POUR LES ESSAIS
 document.querySelector(".menu__5").addEventListener('click', function () {
     if (choixMenu != 'choixMenu5') {
         choixMenu = 'choixMenu5';
         decorVisible(false);
-        tableau.innerHTML = underConstr; // contenu de la page
-        btnSuivantVisible(true);
+        tableau.innerHTML = '<div id="test">Click</div> \
+        <div id="test__resultat"></div>'; // contenu de la page
+        btnSuivantVisible(false);
+        btnRetourVisible(false);
         btnSuivant.classList.remove(btnSuivant.classList);
         btnSuivant.classList.add(choixMenu);
     }
+    document.querySelector("#test").addEventListener('click', function () {
+        let request = new XMLHttpRequest() ;
+
+        request.onreadystatechange = function() {
+            if (this.readyState == XMLHttpRequest.DONE && this.status == 200 ) {
+                let response = JSON.parse(this.responseText);
+                document.getElementById("test__resultat").textContent = response.name;
+            }
+        };
+        request.open("GET", "public/JS/test.json") ;
+        request.send();
+    });
 });
 
 btnSuivant.addEventListener('click', function () {
@@ -270,6 +284,8 @@ btnSuivant.addEventListener('click', function () {
             }
             compteur.textContent ++
             clearEntre();
+        } else {
+            alert("Soit tu n'a rien noté, soit c'est incorrect. Recommence !");
         }
     } else {
         tableau.innerHTML = "Bravo tu as fini !";
@@ -279,3 +295,14 @@ btnSuivant.addEventListener('click', function () {
     }
   
 });
+
+/* 
+Reste à faire :
+    - Mettre toutes les variables et constantes dans un fichier à part ;
+    - Utiliser le bouton Retour pour relancer "l'onglet" ;
+    - Créer le tableau2 "Table de multiplication" :
+        . Choix de la table / Pas de compteur ;
+        . Lancer le visuel avec calcul centré ;
+    - Créer le tableau4 "Problème" ;
+        . créer un listing de plusieurs problèmes dans un fichier à part ;
+*/

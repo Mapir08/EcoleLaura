@@ -74,3 +74,17 @@
 		left: 190px;
 	}
 }
+
+#test{
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    background-color: blue;
+    cursor: pointer;
+    &__resultat{
+        background-color: red;
+        text-align: center;
+        font-size: 4rem;
+        margin-top:100px;
+    }
+}
