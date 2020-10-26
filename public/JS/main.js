@@ -219,6 +219,7 @@ document.querySelector(".menu__2").addEventListener('click', function () {
         decorVisible(true);
         tableau.innerHTML = underConstr; // contenu de la page
         btnSuivantVisible(true);
+        btnRetourVisible(false);
         btnSuivant.classList.remove(btnSuivant.classList);
         btnSuivant.classList.add(choixMenu);
     }
@@ -244,6 +245,7 @@ document.querySelector(".menu__4").addEventListener('click', function () {
         decorVisible(false);
         compteurInit(false);
         btnSuivantVisible(false);
+        btnRetourVisible(false);
         tableau.innerHTML = underConstr; // contenu de la page
         btnSuivant.classList.remove(btnSuivant.classList);
         btnSuivant.classList.add(choixMenu);
@@ -284,6 +286,7 @@ btnSuivant.addEventListener('click', function () {
             } if (choixMenu == 'choixMenu3') {
                 randomTous('fois');
             }
+            btnRetourVisible(true);
             compteur.textContent ++
             clearEntre();
         } else {
@@ -302,6 +305,7 @@ btnSuivant.addEventListener('click', function () {
 Reste à faire :
     - Mettre toutes les variables et constantes dans un fichier à part ;
     - Utiliser le bouton Retour pour relancer "l'onglet" ;
+        . Implique d'afficher le bouton retour (renommer recommencer) lorsque le compteur est supérieur a 1
     - Créer le tableau2 "Table de multiplication" :
         . Choix de la table / Pas de compteur ;
         . Lancer le visuel avec calcul centré ;
