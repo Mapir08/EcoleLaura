@@ -21,10 +21,10 @@ const calculPose = "\
         <label class='chiffre' id='u2'></label>\
     </div>\
     <div id='ligneResultat'>\
-        <input class='result' id='mR' maxlenght='1'></input>\
-        <input class='result' id='cR' maxlenght='1'></input>\
-        <input class='result' id='dR' maxlenght='1'></input>\
-        <input class='result' id='uR' maxlenght='1'></input>\
+        <input class='result' id='mR' type='number' maxlenght='1'></input>\
+        <input class='result' id='cR' type='number' maxlenght='1'></input>\
+        <input class='result' id='dR' type='number' maxlenght='1'></input>\
+        <input class='result' id='uR' type='number' maxlenght='1'></input>\
     </div>\
     <input class='report report__AM' type='number' min=0 max=9></input>\
     <input class='report report__AC' type='number' min=0 max=9></input>\
@@ -238,12 +238,13 @@ document.querySelector(".menu__3").addEventListener('click', function () {
     }
 });
 // Problèmes :
-document.querySelector(".menu__4").addEventListener('click', function () {
+document.querySelector(".menu__4").addEventListener('click', function () { 
     if (choixMenu != 'choixMenu4') {
         choixMenu = 'choixMenu4';
         decorVisible(false);
+        compteurInit(false);
+        btnSuivantVisible(false);
         tableau.innerHTML = underConstr; // contenu de la page
-        btnSuivantVisible(true);
         btnSuivant.classList.remove(btnSuivant.classList);
         btnSuivant.classList.add(choixMenu);
     }
@@ -253,6 +254,7 @@ document.querySelector(".menu__5").addEventListener('click', function () {
     if (choixMenu != 'choixMenu5') {
         choixMenu = 'choixMenu5';
         decorVisible(false);
+        compteurInit(false);
         tableau.innerHTML = '<div id="test">Click</div> \
         <div id="test__resultat"></div>'; // contenu de la page
         btnSuivantVisible(false);

@@ -1,5 +1,3 @@
-@import "base/media";
-
 @import "utils/mixins";
 
 @import "base/typographie";
@@ -10,3 +8,6 @@
 @import "components/pupitre";
 @import "components/tableau";
 @import "components/decors";
+
+@import "base/mediaTEL";
+@import "base/mediaTAB";
