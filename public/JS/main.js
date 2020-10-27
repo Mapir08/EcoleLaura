@@ -21,10 +21,10 @@ const calculPose = "\
         <label class='chiffre' id='u2'></label>\
     </div>\
     <div id='ligneResultat'>\
-        <input class='result' id='mR' type='number' maxlenght='1'></input>\
-        <input class='result' id='cR' type='number' maxlenght='1'></input>\
-        <input class='result' id='dR' type='number' maxlenght='1'></input>\
-        <input class='result' id='uR' type='number' maxlenght='1'></input>\
+        <input class='result' id='mR' maxlenght='1'></input>\
+        <input class='result' id='cR' maxlenght='1'></input>\
+        <input class='result' id='dR' maxlenght='1'></input>\
+        <input class='result' id='uR' maxlenght='1'></input>\
     </div>\
     <input class='report report__AM' type='number' min=0 max=9></input>\
     <input class='report report__AC' type='number' min=0 max=9></input>\
@@ -304,11 +304,12 @@ btnSuivant.addEventListener('click', function () {
 /* 
 Reste à faire :
     - Mettre toutes les variables et constantes dans un fichier à part ;
-    - Utiliser le bouton Retour pour relancer "l'onglet" ;
+    - Utiliser le bouton Retour pour relancer "l'onglet" actuel ;
         . Implique d'afficher le bouton retour (renommer recommencer) lorsque le compteur est supérieur a 1
     - Créer le tableau2 "Table de multiplication" :
         . Choix de la table / Pas de compteur ;
         . Lancer le visuel avec calcul centré ;
     - Créer le tableau4 "Problème" ;
         . créer un listing de plusieurs problèmes dans un fichier à part ;
+    - Créer une version de soustraction version école, lorsqu'on ajoute un report ca enleve une valeur au chiffre de gauche. (ce qui reduit de 2 la quantité de report créé)
 */
